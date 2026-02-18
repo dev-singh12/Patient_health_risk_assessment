@@ -59,3 +59,7 @@ Retrieve Medical Knowledge interacts with:
 
 The diagram models external system interactions only.
 Internal ML preprocessing and algorithm logic are not included as Use Case Diagrams focus on functional requirements.
+
+
+Image- <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4d54624a-468e-489c-9cff-2ac5d70fb462" />
+
