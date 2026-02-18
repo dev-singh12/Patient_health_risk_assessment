@@ -66,3 +66,6 @@ Methods:
 - Patient 1 --- many ClinicalData
 - Patient 1 --- many RiskAssessment
 - RiskAssessment 1 --- 1 HealthReport
+
+Image-- <img width="5228" height="5999" alt="image" src="https://github.com/user-attachments/assets/868e0148-0003-448a-a330-1246bb47c3dc" />
+
