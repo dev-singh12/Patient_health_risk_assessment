@@ -34,3 +34,7 @@ Actors:
 - Separation between Controller and Service layer.
 - Risk Engine is modular.
 - External Knowledge Source accessed through service abstraction.
+
+
+Image- <img width="4191" height="3799" alt="image" src="https://github.com/user-attachments/assets/3ecc5d0a-a2c9-4830-ac8f-e034826a02a2" />
+
