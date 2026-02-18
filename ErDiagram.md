@@ -52,3 +52,7 @@
 - PATIENTS 1 — many CLINICAL_DATA
 - PATIENTS 1 — many RISK_ASSESSMENT
 - RISK_ASSESSMENT 1 — 1 HEALTH_REPORT
+
+
+Image- <img width="4160" height="539" alt="image" src="https://github.com/user-attachments/assets/e5bafdd9-1d7b-4b93-88f3-7078c1ea2313" />
+
