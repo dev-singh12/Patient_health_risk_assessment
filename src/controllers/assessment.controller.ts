@@ -1,4 +1,5 @@
 import { Router, Request, Response, NextFunction } from "express";
+import { eq, and, isNull } from "drizzle-orm";
 import { authMiddleware } from "../middleware/auth.middleware";
 import { rbac } from "../middleware/rbac.middleware";
 import { validate } from "../middleware/validate.middleware";
@@ -10,6 +11,8 @@ import { redis } from "../config/redis";
 import { AuthorizationError } from "../errors";
 import { logger } from "../config/logger";
 import { parsePagination, buildPaginatedResponse } from "../utils/pagination";
+import { db } from "../config/db";
+import { patients } from "../db/schema";
 import type { AssessmentStatus } from "../models/domain.types";
 
 const assessmentRepo = new AssessmentRepository();
@@ -91,8 +94,16 @@ assessmentListRouter.get(
       const requestingUser = req.user!;
       const correlationId = req.correlationId;
 
-      if (requestingUser.role === "PATIENT" && requestingUser.userId !== patientId) {
-        throw new AuthorizationError("Insufficient permissions");
+      if (requestingUser.role === "PATIENT") {
+        // Look up the patient record for this user and verify ownership
+        const [patientRecord] = await db
+          .select({ patientId: patients.patientId })
+          .from(patients)
+          .where(and(eq(patients.userId, requestingUser.userId), isNull(patients.deletedAt)))
+          .limit(1);
+        if (!patientRecord || patientRecord.patientId !== patientId) {
+          throw new AuthorizationError("Insufficient permissions");
+        }
       }
 
       const pagination = parsePagination(req.query as Record<string, unknown>);
