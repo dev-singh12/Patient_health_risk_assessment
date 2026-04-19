@@ -1,13 +1,16 @@
 # Dependencies
 node_modules/
+frontend/node_modules/
 
 # Environment variables — never commit real secrets
 .env
 .env.local
 .env.*.local
+frontend/.env
 
 # Build output
 dist/
+frontend/dist/
 
 # Test coverage
 coverage/
