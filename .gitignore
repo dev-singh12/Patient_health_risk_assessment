@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment variables — never commit real secrets
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+
+# Test coverage
+coverage/
+
+# Drizzle generated migrations (commit if you want migration history)
+# drizzle/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Kiro IDE
+.kiro/
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeScript cache
+*.tsbuildinfo

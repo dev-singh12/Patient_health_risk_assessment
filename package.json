@@ -1,0 +1,53 @@
+{
+  "name": "patient-health-risk-assessment",
+  "version": "1.0.0",
+  "description": "Production-grade Node.js/TypeScript backend for patient health risk assessment",
+  "main": "dist/server.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit --runInBand",
+    "test:integration": "jest --testPathPattern=integration --runInBand",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "ts-node src/db/seed.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "bcrypt": "5.1.1",
+    "bullmq": "5.13.2",
+    "dotenv": "16.4.5",
+    "drizzle-orm": "0.45.2",
+    "express": "4.21.1",
+    "ioredis": "5.4.1",
+    "jsonwebtoken": "9.0.2",
+    "pino": "9.5.0",
+    "postgres": "3.4.9",
+    "uuid": "10.0.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "5.0.2",
+    "@types/express": "4.17.21",
+    "@types/jest": "29.5.14",
+    "@types/jsonwebtoken": "9.0.7",
+    "@types/node": "22.9.0",
+    "@types/supertest": "6.0.2",
+    "@types/uuid": "10.0.0",
+    "drizzle-kit": "0.31.10",
+    "fast-check": "3.23.1",
+    "jest": "29.7.0",
+    "supertest": "7.0.0",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.3"
+  }
+}
