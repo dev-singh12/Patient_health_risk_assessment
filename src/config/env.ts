@@ -52,6 +52,9 @@ const envSchema = z.object({
     .default("5")
     .transform((v) => parseInt(v, 10))
     .pipe(z.number().int().positive()),
+
+  // Frontend URL (for CORS — set to your Vercel URL in production)
+  FRONTEND_URL: z.string().default("http://localhost:5173"),
 });
 
 export type Env = z.infer<typeof envSchema>;
